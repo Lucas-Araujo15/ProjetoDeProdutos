@@ -7,6 +7,7 @@ namespace AulaPOO_ProjetoDeProdutos
         static void Main(string[] args)
         {
            Console.WriteLine("testando...");
+           Console.WriteLine("Deu certo!");
         }
     }
 }
