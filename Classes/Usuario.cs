@@ -36,17 +36,19 @@ namespace AulaPOO_ProjetoDeProdutos.Classes
             cadastros.Remove(usuario);
         }
 
-        public void validacao(string k, string q)
+        public bool validacao(string k, string q)
         {
             Usuario logando = cadastros.Find(item => cadastros.Find(item => item.Email == k).Senha == q);
 
             if (logando != null)
             {
                 login.Logar(logando);
+                return false;
             }
             else
             {
                 Console.WriteLine("Senha ou usuário incorreto. Tente novamente");
+                return true;
             }
         }
     }
