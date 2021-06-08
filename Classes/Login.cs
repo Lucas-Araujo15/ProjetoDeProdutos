@@ -5,14 +5,17 @@ namespace AulaPOO_ProjetoDeProdutos.Classes
     public class Login : ILogin
     {
         private bool Logado;
-        public void Deslogar(Usuario user)
-        {
-
-        }
+        
 
         public Login()
         {
+                                                                 
+        }
 
+        public void Deslogar(Usuario user)
+        {
+            Logado = false;
+            Console.WriteLine("Você saiu do sistema");
         }
 
         public void Logar(Usuario user)
@@ -24,19 +27,19 @@ namespace AulaPOO_ProjetoDeProdutos.Classes
 
             Console.WriteLine($@"
             =================================
-            | (1) Cadastrar produto         |    
+            | (1) Cadastrar marca           |    
             ---------------------------------
-            | (2) Deletar produto           |       
+            | (2) Deletar marca             |       
             ---------------------------------
-            | (3) Listar produtos           |    
+            | (3) Listar marca              |    
             ---------------------------------
 
             =================================
-            | (4) Cadastrar marca           |
+            | (4) Cadastrar produto         |
             ---------------------------------
-            | (5) Deletar marca             |
+            | (5) Deletar produto           |
             ---------------------------------
-            | (6) Listar marca              |
+            | (6) Listar produto            |
             ---------------------------------
             ");
 
@@ -46,7 +49,7 @@ namespace AulaPOO_ProjetoDeProdutos.Classes
             {
                 case "1":
 
-                    if (marca1.ListaMarcas.Count > 0)
+                    if (listaMarcas.Count > 0)
                     {
                         Console.Clear();
 

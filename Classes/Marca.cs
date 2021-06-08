@@ -7,37 +7,31 @@ namespace AulaPOO_ProjetoDeProdutos.Classes
 
     public class Marca : IMarca
     {
-        public int Codigo;
+        public int codigo{get; set;}
+        public string NomeMarca{get; set;}
+        public DateTime DataCadastro{get; set;}
 
-        public string NameMarca;
+        List<Marca> listaMarcas = new List<Marca>();
 
-        public DateTime DataCadastro;
-
-
-        public List<Marca> ListaMarcas = new List<Marca>();
-
-        public string Cadastrar(Marca marca)
+        public string Cadastrar(Marca marcaCadastrar)
         {
-            ListaMarcas.Add(marca);
-            return "Marca cadastrada com sucesso!!";
+            listaMarcas.Add(marcaCadastrar);
+            return "Marca Cadastrada";
+        }
+
+        public string Deletar(Marca marcaDeletar)
+        {
+            listaMarcas.Remove(marcaDeletar);
+            return "Marca deletada";
         }
 
         public void Listar()
         {
-            foreach (Marca item in ListaMarcas)
+            Console.WriteLine("A lista de marcas está aqui");
+            foreach (Marca item in listaMarcas)
             {
-                Console.WriteLine($@" 
-                    {item.NameMarca}
-                    {item.Codigo}
-                    {item.DataCadastro}");
+                Console.WriteLine($"O seu código é {item.codigo}, O nome da sua marca é: {item.NomeMarca} e Data de cadastro: {item.DataCadastro}");
             }
-        }
-
-        public string Deletar(Marca marca)
-        {
-            ListaMarcas.Remove(marca);
-            return "Marca removida com sucesso!!";
-        }
-
     }
+}
 }
