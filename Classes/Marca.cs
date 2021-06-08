@@ -4,28 +4,33 @@ using System.Collections.Generic;
 
 namespace AulaPOO_ProjetoDeProdutos.Classes
 {
-    public class Marca
+
+    public class Marca : IMarca
     {
-        public class Marcas : IMarca
-    {
-        private int Codigo { get; set; }
+        public int Codigo;
 
-        public string NameMarca { get;  set; }
+        public string NameMarca;
 
-        public DateTime DataCadastro { get; set; }
+        public DateTime DataCadastro;
 
 
-        List<Marca> ListaMarcas = new List<Marca>();
+        public List<Marca> ListaMarcas = new List<Marca>();
 
         public string Cadastrar(Marca marca)
         {
-           ListaMarcas.Add(marca);
-           return "Marca cadastrada com sucesso!!";
+            ListaMarcas.Add(marca);
+            return "Marca cadastrada com sucesso!!";
         }
 
-        public List<Marca> Listar()
+        public void Listar()
         {
-            return ListaMarcas;
+            foreach (Marca item in ListaMarcas)
+            {
+                Console.WriteLine($@" 
+                    {item.NameMarca}
+                    {item.Codigo}
+                    {item.DataCadastro}");
+            }
         }
 
         public string Deletar(Marca marca)
@@ -34,25 +39,5 @@ namespace AulaPOO_ProjetoDeProdutos.Classes
             return "Marca removida com sucesso!!";
         }
 
-            public string Listar(Marca marca)
-            {
-                throw new NotImplementedException();
-            }
-
-            void IMarca.Cadastrar(Marca Marca)
-            {
-                throw new NotImplementedException();
-            }
-
-            void IMarca.Listar(Marca marca)
-            {
-                throw new NotImplementedException();
-            }
-
-            void IMarca.Deletar(Marca marca)
-            {
-                throw new NotImplementedException();
-            }
-        }
-}
+    }
 }

@@ -5,6 +5,6 @@ namespace AulaPOO_ProjetoDeProdutos.Interfaces
     {
         void Cadastrar(Usuario usuario);
         void Deletar(Usuario usuario);
-        bool validacao(string k, string q);
+        void validacao(string k, string q);
     }
 }

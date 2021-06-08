@@ -7,7 +7,7 @@ namespace AulaPOO_ProjetoDeProdutos
     {
         static void Main(string[] args)
         {
-            bool repetir;
+
             bool repetir1 = true;
             Usuario user = new Usuario();
 
@@ -40,17 +40,16 @@ namespace AulaPOO_ProjetoDeProdutos
                         break;
 
                     case "2":
-                        do
-                        {
-                            Console.Clear();
-                            Console.Write("Digite seu email: ");
-                            string g = Console.ReadLine();
 
-                            Console.Write("Digite sua senha: ");
-                            string p = Console.ReadLine();
+                        Console.Clear();
+                        Console.Write("Digite seu email: ");
+                        string g = Console.ReadLine();
 
-                            repetir = user.validacao(g, p);
-                        } while (repetir);
+                        Console.Write("Digite sua senha: ");
+                        string p = Console.ReadLine();
+
+                        user.validacao(g, p);
+
 
                         break;
 

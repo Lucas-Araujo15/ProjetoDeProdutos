@@ -1,13 +1,15 @@
 using AulaPOO_ProjetoDeProdutos.Classes;
+using System.Collections.Generic;
 namespace AulaPOO_ProjetoDeProdutos.Interfaces
+
 {
     public interface IMarca
     {
-        void Cadastrar(Marca Marca);
+        string Cadastrar(Marca Marca);
 
-        void Listar(Marca marca);
+        void Listar();
 
-        void Deletar(Marca marca);
+        string Deletar(Marca marca);
 
 
     }

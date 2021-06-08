@@ -4,26 +4,42 @@ using System.Collections.Generic;
 
 namespace AulaPOO_ProjetoDeProdutos.Classes
 {
-    public class Produto
+    public class Produto : IProduto
     {
-        public class Produtos : IProduto
-    {
+
         public int CodigoProduto { get; set; }
         public string NomeProduto { get; set; }
         public DateTime DataCadastroP { get; set; }
         public float Preco { get; set; }
         public Marca marca { get; set; }
-         List<Produto> ListaProdutos = new List<Produto>();
+        public List<Produto> ListaProdutos = new List<Produto>();
 
-         public string Cadastrar(Produto produto)
+
+        public Produto()
+        {
+
+        }
+        public Produto(string _nome, float _preco, Marca mar)
+        {
+
+        }
+        public string Cadastrar(Produto produto)
         {
             ListaProdutos.Add(produto);
             return "Produto cadastrado com sucesso!";
         }
 
-        public List<Produto> Listar()
+        public void Listar()
         {
-            return ListaProdutos;
+            foreach (Produto item in ListaProdutos)
+            {
+                Console.WriteLine($@" 
+                    {item.NomeProduto}
+                    {item.CodigoProduto}
+                    {item.DataCadastroP}
+                    {item.marca}
+                    {item.Preco}");
+            }
         }
 
         public string Deletar(Produto produto)
@@ -32,20 +48,19 @@ namespace AulaPOO_ProjetoDeProdutos.Classes
             return "Produto removido com sucesso!";
         }
 
-            void IProduto.Cadastrar(Produto produto)
-            {
-                throw new NotImplementedException();
-            }
+        void IProduto.Cadastrar(Produto produto)
+        {
 
-            public void Listar(Produto produto)
-            {
-                throw new NotImplementedException();
-            }
-
-            void IProduto.Deletar(Produto produto)
-            {
-                throw new NotImplementedException();
-            }
         }
-}
+
+        public void Listar(Produto produto)
+        {
+
+        }
+
+        void IProduto.Deletar(Produto produto)
+        {
+
+        }
+    }
 }
