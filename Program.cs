@@ -37,16 +37,6 @@ namespace AulaPOO_ProjetoDeProdutos
                         string password = Console.ReadLine();
 
                         user.Cadastrar(new Usuario(name, email, password));
-
-                        Console.Write("Fazendo login...");
-
-                        Console.Write("Digite seu email: ");
-                        string e = Console.ReadLine();
-
-                        Console.Write("Digite sua senha: ");
-                        string s = Console.ReadLine();
-
-                        user.validacao(e, s);
                         break;
 
                     case "2":
