@@ -3,10 +3,10 @@ namespace AulaPOO_ProjetoDeProdutos.Interfaces
 {
     public interface IProduto
     {
-        void Cadastrar(Produto produto);
+        string Cadastrar(Produto produto);
 
-        void Listar(Produto produto);
+        void Listar();
 
-        void Deletar(Produto produto);
+        string Deletar(Produto produto);
     }
 }

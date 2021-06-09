@@ -7,12 +7,24 @@ namespace AulaPOO_ProjetoDeProdutos.Classes
 
     public class Marca : IMarca
     {
-        public int codigo{get; set;}
-        public string NomeMarca{get; set;}
-        public DateTime DataCadastro{get; set;}
+        public int codigo { get; set; }
+        public string NomeMarca { get; set; }
+        public DateTime DataCadastro { get; set; }
 
-        List<Marca> listaMarcas = new List<Marca>();
+        public List<Marca> listaMarcas = new List<Marca>();
 
+        public Marca()
+        {
+
+        }
+
+        public Marca(string name)
+        {
+            this.NomeMarca = name;
+            Random cod = new Random();
+            this.codigo = cod.Next(0, 9999);
+            this.DataCadastro = DateTime.Now;
+        }
         public string Cadastrar(Marca marcaCadastrar)
         {
             listaMarcas.Add(marcaCadastrar);
@@ -32,6 +44,6 @@ namespace AulaPOO_ProjetoDeProdutos.Classes
             {
                 Console.WriteLine($"O seu código é {item.codigo}, O nome da sua marca é: {item.NomeMarca} e Data de cadastro: {item.DataCadastro}");
             }
+        }
     }
-}
 }

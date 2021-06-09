@@ -8,7 +8,7 @@ namespace AulaPOO_ProjetoDeProdutos.Classes
         Login login = new Login();
         public List<Usuario> cadastros = new List<Usuario>();
         private int Codigo;
-        private string Nome;
+        public string Nome;
         private string Email;
         private string Senha;
         private DateTime DataCadastro;

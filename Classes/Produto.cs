@@ -12,6 +12,7 @@ namespace AulaPOO_ProjetoDeProdutos.Classes
         public DateTime DataCadastroP { get; set; }
         public float Preco { get; set; }
         public Marca marca { get; set; }
+        public Usuario user { get; set; }
         public List<Produto> ListaProdutos = new List<Produto>();
 
 
@@ -19,9 +20,14 @@ namespace AulaPOO_ProjetoDeProdutos.Classes
         {
 
         }
-        public Produto(string _nome, float _preco, Marca mar)
+        public Produto(string _nome, float _preco, Marca mar, Usuario us)
         {
-
+            this.NomeProduto = _nome;
+            this.DataCadastroP = DateTime.Now;
+            this.Preco = _preco;
+            this.marca = mar;
+            Random cod = new Random();
+            this.CodigoProduto = cod.Next(0, 9999);
         }
         public string Cadastrar(Produto produto)
         {
@@ -37,8 +43,8 @@ namespace AulaPOO_ProjetoDeProdutos.Classes
                     {item.NomeProduto}
                     {item.CodigoProduto}
                     {item.DataCadastroP}
-                    {item.marca}
-                    {item.Preco}");
+                    {item.marca.NomeMarca}
+                    {item.Preco:C2}");
             }
         }
 
@@ -46,21 +52,6 @@ namespace AulaPOO_ProjetoDeProdutos.Classes
         {
             ListaProdutos.Remove(produto);
             return "Produto removido com sucesso!";
-        }
-
-        void IProduto.Cadastrar(Produto produto)
-        {
-
-        }
-
-        public void Listar(Produto produto)
-        {
-
-        }
-
-        void IProduto.Deletar(Produto produto)
-        {
-
         }
     }
 }
