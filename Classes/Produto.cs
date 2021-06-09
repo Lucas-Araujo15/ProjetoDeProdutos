@@ -40,11 +40,17 @@ namespace AulaPOO_ProjetoDeProdutos.Classes
             foreach (Produto item in ListaProdutos)
             {
                 Console.WriteLine($@" 
-                    {item.NomeProduto}
-                    {item.CodigoProduto}
-                    {item.DataCadastroP}
-                    {item.marca.NomeMarca}
-                    {item.Preco:C2}");
+                    O nome do seu produto é:{item.NomeProduto}
+                    O código do seu produto: {item.CodigoProduto}
+                    Data de seu cadastro: {item.DataCadastroP}
+                   Nome da marca escolhida: {item.marca.NomeMarca}
+                    Preço do produto: {item.Preco:C2}");
+                    Console.WriteLine("");
+                    Console.WriteLine($@"
+                            Obrigado por comprar conosco!!
+                    ");
+
+                
             }
         }
 
