@@ -13,8 +13,8 @@ namespace AulaPOO_ProjetoDeProdutos.Classes
         public float Preco { get; set; }
         public Marca marca { get; set; }
         public Usuario user7 { get; set; }
-        public List<Produto> ListaProdutos = new List<Produto>();
 
+        public List<Produto> ListaProdutos = new List<Produto>();
 
         public Produto()
         {

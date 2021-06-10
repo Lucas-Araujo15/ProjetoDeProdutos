@@ -221,15 +221,27 @@ namespace AulaPOO_ProjetoDeProdutos.Classes
                         user4.Alterar(user);
                         break;
                     case "9":
-                        
-                        user4.Deletar(user, 1);
+                        Console.Clear();
+                        user4.ListarProd(user);
+                        Console.WriteLine("\n");
+                        Console.WriteLine("Tem certeza de que deseja deletar esta conta? (s/n)");
+                        if (Console.ReadLine().ToLower() == "s")
+                        {
+                            user4.Deletar(user);
+                            Logado = false;
+                        }
+                        else
+                        {
+                            Logado = true;
+                        }
+
                         //user4.ListarProd(user);
                         //Console.WriteLine(user.Codigo);
                         //Console.Write("Digite o código do usuário: ");
                         //int cod5 = int.Parse(Console.ReadLine());
                         //Usuario test = user4.cadastros.Find(item => item.Codigo == cod5);
                         //Thread.Sleep(3000);
-                        Logado = false;
+
                         break;
                     default:
                         break;

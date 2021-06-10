@@ -12,6 +12,7 @@ namespace AulaPOO_ProjetoDeProdutos.Classes
         public DateTime DataCadastro { get; set; }
 
         public List<Marca> listaMarcas = new List<Marca>();
+        
 
         public Marca()
         {

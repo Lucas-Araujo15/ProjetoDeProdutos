@@ -3,9 +3,9 @@ namespace AulaPOO_ProjetoDeProdutos.Interfaces
 {
     public interface IUsuario
     {
-        void Cadastrar(Usuario usuario, int d);
-        void Deletar(Usuario usuario, int h);
-        void validacao(string k, string q, int b);
+        void Cadastrar(Usuario usuario);
+        void Deletar(Usuario usuario);
+        Usuario validacao(string k, string q, int b);
 
         void ListarProd(Usuario user1);
 

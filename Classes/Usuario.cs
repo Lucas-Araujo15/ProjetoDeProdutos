@@ -7,6 +7,7 @@ namespace AulaPOO_ProjetoDeProdutos.Classes
     public class Usuario : IUsuario
     {
         Login login = new Login();
+        Program Delete = new Program();
 
         public List<Usuario> cadastros = new List<Usuario>();
         public int Codigo { get; set; }
@@ -29,34 +30,27 @@ namespace AulaPOO_ProjetoDeProdutos.Classes
             this.Codigo = cod.Next(0, 9999);
             this.DataCadastro = DateTime.Now;
         }
-        public void Cadastrar(Usuario usuario, int g)
+        public void Cadastrar(Usuario usuario)
         {
-            if (g == 0)
-            {
-                cadastros.Add(usuario);
-            }
-            else
-            {
-                cadastros.Remove(usuario);
-            }
+
+            cadastros.Add(usuario);
 
 
         }
-        public void Deletar(Usuario usuarioo, int j)
+        public void Deletar(Usuario usuarioo)
         {
-            Cadastrar(usuarioo, j);
-
+            Delete.Deletando(usuarioo);
         }
 
-        public void validacao(string k, string q, int a)
+        public Usuario validacao(string k, string q, int a)
         {
-
+            Usuario UsuarioEncontrado = null;
             if (cadastros.Find(item => item.Email == k) != null)
             {
                 if (cadastros.Find(item => item.Email == k).Senha == q)
                 {
                     login.Logar(cadastros.Find(item => item.Email == k));
-
+                    UsuarioEncontrado = cadastros.Find(item => item.Email == k);
 
                 }
                 else
@@ -72,6 +66,8 @@ namespace AulaPOO_ProjetoDeProdutos.Classes
                 Console.WriteLine("Senha ou usuário incorreto. Tente novamente");
                 Thread.Sleep(2000);
             }
+
+            return UsuarioEncontrado;
         }
 
         public void ListarProd(Usuario user2)

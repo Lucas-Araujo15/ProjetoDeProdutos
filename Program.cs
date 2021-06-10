@@ -5,11 +5,12 @@ namespace AulaPOO_ProjetoDeProdutos
 {
     class Program
     {
+        static Usuario user = new Usuario();
         static void Main(string[] args)
         {
 
             bool repetir1 = true;
-            Usuario user = new Usuario();
+
 
             do
             {
@@ -26,6 +27,7 @@ namespace AulaPOO_ProjetoDeProdutos
             =============================");
 
 
+
                 string opcao = Console.ReadLine();
 
                 switch (opcao)
@@ -40,9 +42,9 @@ namespace AulaPOO_ProjetoDeProdutos
 
                         Console.Write("Digite uma senha: ");
                         string password = Console.ReadLine();
-                        
 
-                        user.Cadastrar(new Usuario(name, email, password), 0);
+
+                        user.Cadastrar(new Usuario(name, email, password));
                         break;
 
                     case "2":
@@ -54,7 +56,8 @@ namespace AulaPOO_ProjetoDeProdutos
                         Console.Write("Digite sua senha: ");
                         string p = Console.ReadLine();
 
-                        user.validacao(g, p, 1);
+                        Usuario Encontrado = user.validacao(g, p, 1);
+
 
 
                         break;
@@ -66,6 +69,10 @@ namespace AulaPOO_ProjetoDeProdutos
                         break;
                 }
             } while (repetir1);
+        }
+        public void Deletando(Usuario conta)
+        {
+            user.cadastros.Remove(conta);
         }
     }
 }
