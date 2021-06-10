@@ -12,7 +12,7 @@ namespace AulaPOO_ProjetoDeProdutos.Classes
         public DateTime DataCadastroP { get; set; }
         public float Preco { get; set; }
         public Marca marca { get; set; }
-        public Usuario user { get; set; }
+        public Usuario user7 { get; set; }
         public List<Produto> ListaProdutos = new List<Produto>();
 
 
@@ -28,6 +28,7 @@ namespace AulaPOO_ProjetoDeProdutos.Classes
             this.marca = mar;
             Random cod = new Random();
             this.CodigoProduto = cod.Next(0, 9999);
+            this.user7 = us;
         }
         public string Cadastrar(Produto produto)
         {
@@ -40,11 +41,21 @@ namespace AulaPOO_ProjetoDeProdutos.Classes
             foreach (Produto item in ListaProdutos)
             {
                 Console.WriteLine($@" 
-                    {item.NomeProduto}
-                    {item.CodigoProduto}
-                    {item.DataCadastroP}
-                    {item.marca.NomeMarca}
-                    {item.Preco:C2}");
+                ============================================
+                |Nome: {item.NomeProduto}
+                ============================================
+                |Código: {item.CodigoProduto}
+                ============================================
+                |Data de cadastro: {item.DataCadastroP}
+                ============================================
+                |Marca: {item.marca.NomeMarca}
+                ============================================
+                |Preço: {item.Preco:C2}
+                ============================================
+                |Usuário: {item.user7.Nome}
+                ============================================");
+
+                Console.WriteLine("\n");
             }
         }
 

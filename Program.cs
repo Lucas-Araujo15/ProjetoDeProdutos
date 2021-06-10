@@ -13,7 +13,10 @@ namespace AulaPOO_ProjetoDeProdutos
 
             do
             {
+                Console.Clear();
                 Console.WriteLine($@"
+            =============================
+            |      Seja bem vindo!      |
             =============================
             | (1) Cadastrar             |
             =============================
@@ -22,11 +25,13 @@ namespace AulaPOO_ProjetoDeProdutos
             | (0) Sair                  |
             =============================");
 
+
                 string opcao = Console.ReadLine();
 
                 switch (opcao)
                 {
                     case "1":
+                        Console.Clear();
                         Console.Write("Qual o seu nome? ");
                         string name = Console.ReadLine();
 
@@ -35,6 +40,7 @@ namespace AulaPOO_ProjetoDeProdutos
 
                         Console.Write("Digite uma senha: ");
                         string password = Console.ReadLine();
+                        
 
                         user.Cadastrar(new Usuario(name, email, password));
                         break;
@@ -48,7 +54,7 @@ namespace AulaPOO_ProjetoDeProdutos
                         Console.Write("Digite sua senha: ");
                         string p = Console.ReadLine();
 
-                        user.validacao(g, p);
+                        user.validacao(g, p, 1);
 
 
                         break;

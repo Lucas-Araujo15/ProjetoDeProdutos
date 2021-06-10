@@ -42,7 +42,16 @@ namespace AulaPOO_ProjetoDeProdutos.Classes
             Console.WriteLine("A lista de marcas está aqui");
             foreach (Marca item in listaMarcas)
             {
-                Console.WriteLine($"O seu código é {item.codigo}, O nome da sua marca é: {item.NomeMarca} e Data de cadastro: {item.DataCadastro}");
+                Console.WriteLine($@"
+                ======================================
+                |     Código     | {item.codigo}
+                ======================================
+                |  Nome da marca | {item.NomeMarca}
+                ======================================
+                |Data de cadastro| {item.DataCadastro}
+                ======================================
+                ");
+                Console.WriteLine("\n");
             }
         }
     }
