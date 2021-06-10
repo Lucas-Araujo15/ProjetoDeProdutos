@@ -222,7 +222,7 @@ namespace AulaPOO_ProjetoDeProdutos.Classes
                         break;
                     case "9":
                         
-                        user4.Deletar(user);
+                        user4.Deletar(user, 1);
                         //user4.ListarProd(user);
                         //Console.WriteLine(user.Codigo);
                         //Console.Write("Digite o código do usuário: ");

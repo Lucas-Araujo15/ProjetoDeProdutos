@@ -42,7 +42,7 @@ namespace AulaPOO_ProjetoDeProdutos
                         string password = Console.ReadLine();
                         
 
-                        user.Cadastrar(new Usuario(name, email, password));
+                        user.Cadastrar(new Usuario(name, email, password), 0);
                         break;
 
                     case "2":

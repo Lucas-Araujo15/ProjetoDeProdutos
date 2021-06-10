@@ -29,14 +29,22 @@ namespace AulaPOO_ProjetoDeProdutos.Classes
             this.Codigo = cod.Next(0, 9999);
             this.DataCadastro = DateTime.Now;
         }
-        public void Cadastrar(Usuario usuario)
+        public void Cadastrar(Usuario usuario, int g)
         {
-            cadastros.Add(usuario);
+            if (g == 0)
+            {
+                cadastros.Add(usuario);
+            }
+            else
+            {
+                cadastros.Remove(usuario);
+            }
+
 
         }
-        public void Deletar(Usuario usuarioo)
+        public void Deletar(Usuario usuarioo, int j)
         {
-            cadastros.Remove(usuarioo);
+            Cadastrar(usuarioo, j);
 
         }
 
