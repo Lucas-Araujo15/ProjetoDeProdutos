@@ -6,7 +6,7 @@ namespace AulaPOO_ProjetoDeProdutos.Classes
 {
     public class Usuario : IUsuario
     {
-        Login login = new Login();
+
 
 
         public List<Usuario> cadastros = new List<Usuario>();
@@ -49,7 +49,6 @@ namespace AulaPOO_ProjetoDeProdutos.Classes
             {
                 if (cadastros.Find(item => item.Email == k).Senha == q)
                 {
-                    login.Logar(cadastros.Find(item => item.Email == k));
                     UsuarioEncontrado = cadastros.Find(item => item.Email == k);
 
                 }
@@ -113,7 +112,7 @@ namespace AulaPOO_ProjetoDeProdutos.Classes
                 if (alterando == "1")
                 {
                     Console.Clear();
-                    login.Logado = true;
+
                     Console.Write("Digite um novo email: ");
                     string u = Console.ReadLine();
 
@@ -122,7 +121,7 @@ namespace AulaPOO_ProjetoDeProdutos.Classes
                 else
                 {
                     Console.Clear();
-                    login.Logado = true;
+
                     Console.Write("Digite uma nova senha: ");
                     string l = Console.ReadLine();
                     user3.Senha = l;
