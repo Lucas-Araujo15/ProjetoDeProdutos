@@ -330,7 +330,7 @@ namespace AulaPOO_ProjetoDeProdutos.Classes
 
                         break;
                     case "0":
-                        Logado = false;
+                        Deslogar(user);
                         break;
                     case "7":
                         Console.Clear();
