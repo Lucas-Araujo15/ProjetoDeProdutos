@@ -7,7 +7,7 @@ namespace AulaPOO_ProjetoDeProdutos.Classes
     public class Usuario : IUsuario
     {
         Login login = new Login();
-        Program Delete = new Program();
+
 
         public List<Usuario> cadastros = new List<Usuario>();
         public int Codigo { get; set; }
@@ -39,7 +39,7 @@ namespace AulaPOO_ProjetoDeProdutos.Classes
         }
         public void Deletar(Usuario usuarioo)
         {
-            Delete.Deletando(usuarioo);
+            cadastros.Remove(usuarioo);
         }
 
         public Usuario validacao(string k, string q, int a)

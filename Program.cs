@@ -1,6 +1,6 @@
 ﻿using System;
 using AulaPOO_ProjetoDeProdutos.Classes;
-
+using System.Threading;
 namespace AulaPOO_ProjetoDeProdutos
 {
     class Program
@@ -24,6 +24,10 @@ namespace AulaPOO_ProjetoDeProdutos
             | (2) Logar                 |
             =============================
             | (0) Sair                  |
+            =============================
+
+            =============================
+            | (3) Deletar conta         |
             =============================");
 
 
@@ -56,23 +60,67 @@ namespace AulaPOO_ProjetoDeProdutos
                         Console.Write("Digite sua senha: ");
                         string p = Console.ReadLine();
 
-                        Usuario Encontrado = user.validacao(g, p, 1);
-
-
-
+                        user.validacao(g, p, 1);
                         break;
 
                     case "0":
                         repetir1 = false;
                         break;
+                    case "3":
+                        if (user.cadastros.Count > 0)
+                        {
+                            Console.Clear();
+                            foreach (Usuario item in user.cadastros)
+                            {
+                                Console.WriteLine($@" 
+                ============================================
+                |Nome: {item.Nome}
+                ============================================
+                |Código: {item.Codigo}
+                ============================================
+                |Email: {item.Email}
+                ============================================
+                |Data de cadastro: {item.DataCadastro}
+                ============================================
+                ");
+                                Console.WriteLine("\n");
+                            }
+                            Console.Write("Digite o código da conta que deseja deletar: ");
+                            int cod = int.Parse(Console.ReadLine());
+                            Console.Clear();
+
+                            Console.Write("Digite seu email: ");
+                            string o = Console.ReadLine();
+
+                            Console.Write("Digite sua senha: ");
+                            string t = Console.ReadLine();
+
+                            if (user.cadastros.Find(item => item.Codigo == cod).Email == o && user.cadastros.Find(item => item.Codigo == cod).Senha == t)
+                            {
+                                Console.Clear();
+                                user.Deletar(user.cadastros.Find(item => item.Codigo == cod));
+                                Console.WriteLine("Conta deletada com sucesso!");
+                                Thread.Sleep(3000);
+                            }
+                            else
+                            {
+                                Console.Clear();
+                                Console.WriteLine("Senha e/ou email incorretos. Tente novamente");
+                                Thread.Sleep(3000);
+                            }
+                        }
+                        else
+                        {
+                            Console.Clear();
+                            Console.WriteLine("Nenhuma conta foi cadastrada");
+                            Thread.Sleep(3000);
+                        }
+
+                        break;
                     default:
                         break;
                 }
             } while (repetir1);
-        }
-        public void Deletando(Usuario conta)
-        {
-            user.cadastros.Remove(conta);
         }
     }
 }

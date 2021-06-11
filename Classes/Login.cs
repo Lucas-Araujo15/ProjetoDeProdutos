@@ -60,8 +60,6 @@ namespace AulaPOO_ProjetoDeProdutos.Classes
             =================================
             | (8) Alterar senha ou email    |
             =================================
-            | (9) Deletar conta             |
-            =================================
 
             =================================
             | (0) Deslogar                  |
@@ -219,29 +217,6 @@ namespace AulaPOO_ProjetoDeProdutos.Classes
                         break;
                     case "8":
                         user4.Alterar(user);
-                        break;
-                    case "9":
-                        Console.Clear();
-                        user4.ListarProd(user);
-                        Console.WriteLine("\n");
-                        Console.WriteLine("Tem certeza de que deseja deletar esta conta? (s/n)");
-                        if (Console.ReadLine().ToLower() == "s")
-                        {
-                            user4.Deletar(user);
-                            Logado = false;
-                        }
-                        else
-                        {
-                            Logado = true;
-                        }
-
-                        //user4.ListarProd(user);
-                        //Console.WriteLine(user.Codigo);
-                        //Console.Write("Digite o código do usuário: ");
-                        //int cod5 = int.Parse(Console.ReadLine());
-                        //Usuario test = user4.cadastros.Find(item => item.Codigo == cod5);
-                        //Thread.Sleep(3000);
-
                         break;
                     default:
                         break;
